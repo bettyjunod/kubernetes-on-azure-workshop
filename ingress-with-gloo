@@ -1,0 +1,28 @@
+# Gloo as Kubernetes Ingress
+
+Gloo is an Edge Gateway and Kubernetes Ingress Controller built on Envoy Proxy.
+
+These directions assume you have a prepared Kubernetes cluster. Full details on setting up your
+Kubernetes cluster [here](../cluster_setup).
+
+## Install Gloo on Kubernetes with `glooctl`
+
+On a running Kubernetes cluster, run the following command to deploy the Gloo Ingress Controller to the `gloo-system` namespace:
+
+```bash
+glooctl install ingress
+```
+
+> Note: You can run the command with the flag `--dry-run` to output
+the Kubernetes manifests (as `yaml`) that `glooctl` will
+apply to the cluster instead of installing them.
+
+Additional Gloo install options [here](https://gloo.solo.io/installation/ingress/)
+
+## Configuration
+Kubernetes Ingress Controllers are for simple traffic routing in a Kubernetes cluster. Gloo supports managing Ingress objects with the glooctl install ingress command, Gloo will configure Envoy using Kubernetes Ingress objects created by users.
+
+* Basic ingress object managed by Gloo
+* TLS dconfiguration 
+
+https://gloo.solo.io/gloo_integrations/ingress/
